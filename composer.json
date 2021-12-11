@@ -9,6 +9,14 @@
             "email": "demin@gigansk.ru"
         }
     ],
-    "require": {},
+    "autoload": {
+        "psr-4": {
+          "BrainGames\\": "src"
+        },
+        "files": ["src/Cli.php"]
+    },
+    "require": {
+        "wp-cli/php-cli-tools" : "*"
+    },
     "bin": ["bin/brain-games"]
 }

@@ -5,5 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: link project
-      run: make link
-      
+      run: make lint

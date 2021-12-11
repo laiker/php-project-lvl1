@@ -5,18 +5,18 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5d177dcf96cb2bacdaa2f20c40d0b2565f8a043d',
-        'name' => 'hexlet/code',
+        'reference' => '9cc54559c042c025a2239107c4273daadf19621e',
+        'name' => 'laiker/hexlet-php-lvl1',
         'dev' => true,
     ),
     'versions' => array(
-        'hexlet/code' => array(
+        'laiker/hexlet-php-lvl1' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5d177dcf96cb2bacdaa2f20c40d0b2565f8a043d',
+            'reference' => '9cc54559c042c025a2239107c4273daadf19621e',
             'dev_requirement' => false,
         ),
         'squizlabs/php_codesniffer' => array(

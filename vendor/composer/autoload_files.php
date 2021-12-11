@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
-    '4829b2fddb6a054e51fbedd69dcbc605' => $baseDir . '/src/Cli.php',
+    'ab660c52c5ef749461ab1ac7172745d6' => $baseDir . '/src/Cli.php',
 );

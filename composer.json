@@ -1,7 +1,9 @@
 {
-    "name": "hexlet/code",
+    "name": "laiker/hexlet-php-lvl1",
     "description": "learning hexlet project php lvl1",
     "type": "library",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "license": "MIT",
     "authors": [
         {
@@ -16,10 +18,13 @@
         "files": ["src/Cli.php"]
     },
     "require": {
-        "wp-cli/php-cli-tools" : "*"
+        "wp-cli/php-cli-tools" : "@dev"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "3.6.1"
+        "squizlabs/php_codesniffer": "^3.0@dev"
     },
-    "bin": ["bin/brain-games"]
+    "scripts": {
+        "phpcs": "phpcs"
+    },
+    "bin": ["bin/brain-games", "bin/brain-even"]
 }

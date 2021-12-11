@@ -1,23 +1,32 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '01d93f326849bdadb166a2c5b7710824060d8f00',
+        'reference' => '5d177dcf96cb2bacdaa2f20c40d0b2565f8a043d',
         'name' => 'hexlet/code',
         'dev' => true,
     ),
     'versions' => array(
         'hexlet/code' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '01d93f326849bdadb166a2c5b7710824060d8f00',
+            'reference' => '5d177dcf96cb2bacdaa2f20c40d0b2565f8a043d',
             'dev_requirement' => false,
+        ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.6.1',
+            'version' => '3.6.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'reference' => 'f268ca40d54617c6e06757f83f699775c9b3ff2e',
+            'dev_requirement' => true,
         ),
         'wp-cli/php-cli-tools' => array(
             'pretty_version' => 'v0.11.13',

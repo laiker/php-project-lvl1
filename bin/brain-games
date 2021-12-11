@@ -1,8 +1,7 @@
 #!/usr/bin/php
-<?
+<?php
 $autoloadPath = $_SERVER["DOCUMENT_ROOT"] . 'vendor/autoload.php';
 if (file_exists($autoloadPath)) {
     require_once $autoloadPath;
 }
-
-BrainGames\Cli\run(); 
+BrainGames\Cli\run();

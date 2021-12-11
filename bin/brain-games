@@ -5,4 +5,4 @@ if (file_exists($autoloadPath)) {
     require_once $autoloadPath;
 }
 
-BrainGames\EvenGame\run();
+BrainGames\Cli\run();

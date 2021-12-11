@@ -35,28 +35,35 @@ class EvenGame
     {
         $lastAnswerNumber = array_key_last($this->answers);
         $lastAnswerValue = $this->answers[$lastAnswerNumber];
-        if ($lastAnswerNumber % 2 == 0 && $lastAnswerValue == 'no') {
-            line("'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, " . $this->name . "!");
+
+        if ($lastAnswerNumber % 2 == 0 && $lastAnswerValue !== 'yes') {
+            line("'" . $lastAnswerValue . "' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, " . $this->name . "!");
+            die();
             return false;
         } 
         
-        if ($lastAnswerNumber % 2 != 0 && $lastAnswerValue == 'yes') {
-            line("'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, " . $this->name . "!");
+        if ($lastAnswerNumber % 2 != 0 && $lastAnswerValue !== 'no') {
+            line("'" . $lastAnswerValue . "' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, " . $this->name . "!");
+            die();
             return false;
         }
 
         line("Correct!");
+        return true;
     }
 
     public function run()
     {
         $this->makeGreetings();
+        $gameSuccess = true;
         for ($i = 0; $i < 3; $i++) {
             $this->makeQuestion();
-            if ($this->makeAnswer()) {
+            if (!$this->makeAnswer()) {
                 return false;
             }
         }
-        line("Congratulations, " . $this->name . "!");
+        if ($gameSuccess) {
+            line("Congratulations, " . $this->name . "!");
+        }
     }
 }

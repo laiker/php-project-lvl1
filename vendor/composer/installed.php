@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9cc54559c042c025a2239107c4273daadf19621e',
+        'reference' => 'e2cca0ff4a892e2b35d80130af0c80cd2cf88faf',
         'name' => 'laiker/hexlet-php-lvl1',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9cc54559c042c025a2239107c4273daadf19621e',
+            'reference' => 'e2cca0ff4a892e2b35d80130af0c80cd2cf88faf',
             'dev_requirement' => false,
         ),
         'squizlabs/php_codesniffer' => array(

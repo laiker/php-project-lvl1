@@ -1,0 +1,8 @@
+name: link-project
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: link project
+      run: make link

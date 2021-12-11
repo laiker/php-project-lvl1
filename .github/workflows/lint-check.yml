@@ -7,8 +7,8 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2
       - name: validate composer
-        uses: make validate
+        run: make validate
       - name: install composer
-        uses: make install
+        run: make install
       - name: lint project
         run: make lint

@@ -6,5 +6,9 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
-      - name: link project
+      - name: validate composer
+        uses: make validate
+      - name: install composer
+        uses: make install
+      - name: lint project
         run: make lint

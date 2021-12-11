@@ -1,0 +1,14 @@
+{
+    "name": "hexlet/code",
+    "description": "learning hexlet project php lvl1",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruslan Demin",
+            "email": "demin@gigansk.ru"
+        }
+    ],
+    "require": {},
+    "bin": ["bin/brain-games"]
+}

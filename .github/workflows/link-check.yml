@@ -4,5 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: link project
-      run: make lint
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: link project
+        run: make lint

@@ -1,67 +1,59 @@
 <?php
 
-namespace BrainGames;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
-class Engine
+global $userResults;
+global $name;
+
+function makeGreetings($gameRule)
 {
-    protected $name;
-    protected $userResults;
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    line($gameRule);
+    return $name;
+}
 
-    public function __construct($fnGameExpression, $fnGameCalculation, $gameRule)
-    {
-        $this->fnGameExpression = $fnGameExpression;
-        $this->fnGameCalculation = $fnGameCalculation;
-        $this->gameRule = $gameRule;
+function makeQuestion($fnGameExpression)
+{
+    $gameExpression = \call_user_func($fnGameExpression);
+    line("Question: " . $gameExpression);
+    $userAnswer = prompt('Your answer');
+    $userResults[] = ['question' => $gameExpression, 'answer' => $userAnswer];
+    return $userResults;
+}
+
+function makeAnswer($fnGameCalculation, $userResults, $name)
+{
+    $lastUserExpression = array_key_last($userResults);
+    $userLastResult = $userResults[$lastUserExpression];
+    $gameResultCorrectAnswer = \call_user_func($fnGameCalculation, $userLastResult['question']);
+
+    if ($gameResultCorrectAnswer != $userLastResult['answer']) {
+        line("'" . $userLastResult['answer'] . "' is wrong answer ;(. Correct answer was '" . $gameResultCorrectAnswer . "'");
+        line("Let's try again, " . $name . "!");
+        die();
+        return false;
     }
 
-    protected function makeGreetings()
-    {
-        line('Welcome to the Brain Game!');
-        $this->name = prompt('May I have your name?');
-        line("Hello, %s!", $this->name);
-        line($this->gameRule);
-    }
+    line("Correct!");
+    return true;
+}
 
-    public function makeQuestion()
-    {
-        $gameExpression = \call_user_func($this->fnGameExpression);
-        line("Question: " . $gameExpression);
-        $userAnswer = prompt('Your answer');
-        $this->userResults[] = ['question' => $gameExpression, 'answer' => $userAnswer];
-    }
-
-    protected function makeAnswer()
-    {
-        $lastUserExpression = array_key_last($this->userResults);
-        $userLastResult = $this->userResults[$lastUserExpression];
-        $gameResultCorrectAnswer = \call_user_func($this->fnGameCalculation, $userLastResult['question']);
-
-        if ($gameResultCorrectAnswer != $userLastResult['answer']) {
-            line("'" . $userLastResult['answer'] . "' is wrong answer ;(. Correct answer was '"
-            . $gameResultCorrectAnswer . "'.\n Let's try again, " . $this->name . "!");
-            die();
+function run($fnGameExpression, $fnGameCalculation, $gameRule)
+{
+    $name = makeGreetings($gameRule);
+    $gameSuccess = true;
+    for ($i = 0; $i < 3; $i++) {
+        $userResults = makeQuestion($fnGameExpression);
+        if (!makeAnswer($fnGameCalculation, $userResults, $name)) {
             return false;
         }
-
-        line("Correct!");
-        return true;
     }
-
-    public function run()
-    {
-        $this->makeGreetings();
-        $gameSuccess = true;
-        for ($i = 0; $i < 3; $i++) {
-            $this->makeQuestion();
-            if (!$this->makeAnswer()) {
-                return false;
-            }
-        }
-        if ($gameSuccess) {
-            line("Congratulations, " . $this->name . "!");
-        }
+    if ($gameSuccess) {
+        line("Congratulations, " . $name . "!");
     }
 }

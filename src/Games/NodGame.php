@@ -2,8 +2,6 @@
 
 namespace BrainGames\Games\NodGame;
 
-use BrainGames\Engine;
-
 function run()
 {
     $fnGameExpression = function () {
@@ -22,7 +20,7 @@ function run()
         return $arNodDigits[1];
     };
 
-    $gameEngine = new Engine($fnGameExpression, $fnGameCalculation, "Find the greatest common divisor
-     of given numbers.");
-    $gameEngine->run();
+    $gameRule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+
+    \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

@@ -2,8 +2,6 @@
 
 namespace BrainGames\Games\ProgressionGame;
 
-use BrainGames\Engine;
-
 function run()
 {
     $fnGameExpression = function () {
@@ -40,6 +38,6 @@ function run()
         }
     };
 
-    $gameEngine = new Engine($fnGameExpression, $fnGameCalculation, "What number is missing in the progression?");
-    $gameEngine->run();
+    $gameRule = "What number is missing in the progression?";
+    \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

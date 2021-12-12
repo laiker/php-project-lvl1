@@ -2,8 +2,6 @@
 
 namespace BrainGames\Games\CalcGame;
 
-use BrainGames\Engine;
-
 function run()
 {
     $fnGameExpression = function () {
@@ -14,7 +12,8 @@ function run()
     $fnGameCalculation = function ($lastUserExpression) {
         return eval('return ' . $lastUserExpression . ';');
     };
-
-    $gameEngine = new Engine($fnGameExpression, $fnGameCalculation, "What is the result of the expression?");
-    $gameEngine->run();
+    
+    $gameRule = "What is the result of the expression?";
+    
+    \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

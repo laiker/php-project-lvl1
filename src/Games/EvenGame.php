@@ -2,8 +2,6 @@
 
 namespace BrainGames\Games\EvenGame;
 
-use BrainGames\Engine;
-
 function run()
 {
     $fnGameExpression = function () {
@@ -14,7 +12,7 @@ function run()
         return ($lastUserExpression % 2 == 0) ? 'yes' : 'no';
     };
 
-    $gameEngine = new Engine($fnGameExpression, $fnGameCalculation, "Answer \"yes\" if the number is even, 
-    otherwise answer \"no\".");
-    $gameEngine->run();
+    $gameRule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+
+    \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

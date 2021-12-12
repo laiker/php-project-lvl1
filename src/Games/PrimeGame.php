@@ -2,8 +2,6 @@
 
 namespace BrainGames\Games\PrimeGame;
 
-use BrainGames\Engine;
-
 function run()
 {
     $fnGameExpression = function () {
@@ -26,7 +24,6 @@ function run()
         return $fnGameCalculation($lastUserExpression, $i + 1);
     };
 
-    $gameEngine = new Engine($fnGameExpression, $fnGameCalculation, "Answer \"yes\" if the number is prime, 
-    otherwise answer \"no\".");
-    $gameEngine->run();
+    $gameRule ="Answer \"yes\" if the number is prime, otherwise answer \"no\".";
+    \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

@@ -6,6 +6,8 @@ brain-even:
 	bin/brain-even
 brain-calc:
 	bin/brain-calc
+brain-nod:
+	bin/brain-nod
 validate:
 	composer validate
 lint:

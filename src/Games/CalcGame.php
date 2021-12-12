@@ -12,8 +12,8 @@ function run()
     $fnGameCalculation = function ($lastUserExpression) {
         return eval('return ' . $lastUserExpression . ';');
     };
-    
+
     $gameRule = "What is the result of the expression?";
-    
+
     \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

@@ -24,6 +24,6 @@ function run()
         return $fnGameCalculation($lastUserExpression, $i + 1);
     };
 
-    $gameRule ="Answer \"yes\" if the number is prime, otherwise answer \"no\".";
+    $gameRule = "Answer \"yes\" if the number is prime, otherwise answer \"no\".";
     \BrainGames\Engine\run($fnGameExpression, $fnGameCalculation, $gameRule);
 }

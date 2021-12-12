@@ -5,9 +5,6 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-global $userResults;
-global $name;
-
 function makeGreetings($gameRule)
 {
     line('Welcome to the Brain Game!');
@@ -33,7 +30,9 @@ function makeAnswer($fnGameCalculation, $userResults, $name)
     $gameResultCorrectAnswer = \call_user_func($fnGameCalculation, $userLastResult['question']);
 
     if ($gameResultCorrectAnswer != $userLastResult['answer']) {
-        line("'" . $userLastResult['answer'] . "' is wrong answer ;(. Correct answer was '" . $gameResultCorrectAnswer . "'");
+        $partOne = "'" . $userLastResult['answer'] . "' is wrong answer ;(";
+        $partTwo = " Correct answer was '" . $gameResultCorrectAnswer . "'";
+        line($partOne . $partTwo);
         line("Let's try again, " . $name . "!");
         die();
         return false;

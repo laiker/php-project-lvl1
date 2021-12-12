@@ -14,3 +14,6 @@ https://asciinema.org/a/vERK4w5UnK0igtVyOWZapGey2
 
 Brain Nod Game Demonstration
 https://asciinema.org/a/Kt2VEUajPnFKoMfDWkaIU09C4
+
+Brain Progression Game Demonstration
+https://asciinema.org/a/LwbL2tTre37I9YWoYM9dGEOvS

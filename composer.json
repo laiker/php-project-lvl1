@@ -15,7 +15,7 @@
         "psr-4": {
           "BrainGames\\": "src"
         },
-        "files": ["src/Cli.php", "src/Games/EvenGame.php", "src/Games/CalcGame.php", "src/Games/NodGame.php"]
+        "files": ["src/Cli.php", "src/Games/EvenGame.php", "src/Games/CalcGame.php", "src/Games/NodGame.php", "src/Games/ProgressionGame.php"]
     },
     "require": {
         "wp-cli/php-cli-tools" : "@dev"
@@ -26,5 +26,5 @@
     "scripts": {
         "phpcs": "phpcs"
     },
-    "bin": ["bin/brain-games", "bin/brain-even", "bin/brain-calc", "bin/brain-nod"]
+    "bin": ["bin/brain-games", "bin/brain-even", "bin/brain-calc", "bin/brain-nod", "bin/brain-progression"]
 }

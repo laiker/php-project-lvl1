@@ -1,17 +1,17 @@
 install:
 	composer install
 brain-games:
-	bin/brain-games
+	./bin/brain-games
 brain-even:
-	bin/brain-even
+	./bin/brain-even
 brain-calc:
-	bin/brain-calc
+	./bin/brain-calc
 brain-nod:
-	bin/brain-nod
+	./bin/brain-nod
 brain-progression:
-	bin/brain-progression
+	./bin/brain-progression
 brain-prime:
-	bin/brain-prime
+	./bin/brain-prime
 validate:
 	composer validate
 lint:

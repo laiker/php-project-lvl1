@@ -19,16 +19,23 @@ function run()
             }
         }
 
-        $arProgression[rand(1, $countProgression - 2)] = '...';
+        $arProgression[rand(0, $countProgression - 1)] = '...';
 
         return implode(' ', $arProgression);
     };
 
     $fnGameCalculation = function($lastUserExpression) {
         $arProgression = explode(' ', $lastUserExpression);
+        $progressionCount = count($arProgression);
         foreach ($arProgression as $key => $digit) {
             if ($digit == '...') {
-                return ($arProgression[$key + 1] + $arProgression[$key - 1])  / 2;
+                if ($key > 0 && $key < $progressionCount - 1) {
+                    return ($arProgression[$key + 1] + $arProgression[$key - 1])  / 2;
+                } else if ($key == 0) {
+                    return $arProgression[$key + 1] - ($arProgression[$key + 2] - $arProgression[$key + 1]);
+                } else {
+                    return ($arProgression[$key - 1] - $arProgression[$key - 2]) + $arProgression[$key - 1];
+                }
             }
         }
     };

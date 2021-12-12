@@ -15,7 +15,7 @@
         "psr-4": {
           "BrainGames\\": "src"
         },
-        "files": ["src/Cli.php"]
+        "files": ["src/Cli.php", "src/EvenGame.php"]
     },
     "require": {
         "wp-cli/php-cli-tools" : "@dev"
@@ -26,5 +26,5 @@
     "scripts": {
         "phpcs": "phpcs"
     },
-    "bin": ["bin/brain-games", "bin/brain-even"]
+    "bin": ["bin/brain-games", "bin/brain-even", "bin/brain-calc"]
 }

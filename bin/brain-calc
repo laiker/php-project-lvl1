@@ -5,5 +5,4 @@ if (file_exists($autoloadPath)) {
     require_once $autoloadPath;
 }
 
-$brainGame = new BrainGames\EvenGame;
-$brainGame->run();
+BrainGames\CalcGame\run();

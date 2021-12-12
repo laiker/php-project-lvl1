@@ -40,7 +40,8 @@ class Engine
         $gameResultCorrectAnswer = \call_user_func($this->fnGameCalculation, $userLastResult['question']);
 
         if ($gameResultCorrectAnswer != $userLastResult['answer']) {
-            line("'" . $userLastResult['answer'] . "' is wrong answer ;(. Correct answer was '" . $gameResultCorrectAnswer . "'.\n Let's try again, " . $this->name . "!");
+            line("'" . $userLastResult['answer'] . "' is wrong answer ;(. Correct answer was '"
+            . $gameResultCorrectAnswer . "'.\n Let's try again, " . $this->name . "!");
             die();
             return false;
         }

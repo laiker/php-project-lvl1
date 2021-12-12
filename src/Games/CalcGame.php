@@ -6,12 +6,12 @@ use BrainGames\Engine;
 
 function run()
 {
-    $fnGameExpression = function() {
+    $fnGameExpression = function () {
         $mathSymbol = ['+', '-', '*'];
         return \rand(1, 100) . $mathSymbol[rand(0, 2)] . \rand(1, 100);
     };
 
-    $fnGameCalculation = function($lastUserExpression) {
+    $fnGameCalculation = function ($lastUserExpression) {
         return eval('return ' . $lastUserExpression . ';');
     };
 

@@ -6,8 +6,9 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\run as makeGreetings;
 
-function makeQuestion($fnGameExpression)
+function makeQuestion(callable $fnGameExpression)
 {
+    $userResults = [];
     $gameExpression = \call_user_func($fnGameExpression);
     line("Question: " . $gameExpression);
     $userAnswer = prompt('Your answer');
@@ -15,7 +16,7 @@ function makeQuestion($fnGameExpression)
     return $userResults;
 }
 
-function makeAnswer($fnGameCalculation, $userResults, $name)
+function makeAnswer(callable $fnGameCalculation, array $userResults, string $name)
 {
     $lastUserExpression = array_key_last($userResults);
     $userLastResult = $userResults[$lastUserExpression];
@@ -26,7 +27,6 @@ function makeAnswer($fnGameCalculation, $userResults, $name)
         $partTwo = " Correct answer was '" . $gameResultCorrectAnswer . "'";
         line($partOne . $partTwo);
         line("Let's try again, " . $name . "!");
-        die();
         return false;
     }
 
@@ -34,17 +34,15 @@ function makeAnswer($fnGameCalculation, $userResults, $name)
     return true;
 }
 
-function run($fnGameExpression, $fnGameCalculation, $gameRule)
+function run(callabale $fnGameExpression, callabale $fnGameCalculation, string $gameRule)
 {
     $name = makeGreetings($gameRule);
-    $gameSuccess = true;
     for ($i = 0; $i < 3; $i++) {
         $userResults = makeQuestion($fnGameExpression);
         if (!makeAnswer($fnGameCalculation, $userResults, $name)) {
             return false;
         }
     }
-    if ($gameSuccess) {
-        line("Congratulations, " . $name . "!");
-    }
+
+    line("Congratulations, " . $name . "!");
 }

@@ -5,34 +5,34 @@ namespace BrainGames\Games\ProgressionGame;
 function run()
 {
     $fnGameExpression = function () {
-        $arProgression = [];
+        $arProg = [];
         $startStep = \rand(1, 100);
         $progressionStep = \rand(1, 20);
         $countProgression = \rand(5, 10);
         for ($i = 0; $i < $countProgression; $i++) {
             if ($i == 0) {
-                $arProgression[$i] = $startStep;
+                $arProg[$i] = $startStep;
             } else {
-                $arProgression[$i] = $arProgression[$i - 1] + $progressionStep;
+                $arProg[$i] = $arProg[$i - 1] + $progressionStep;
             }
         }
 
-        $arProgression[rand(0, $countProgression - 1)] = '..';
+        $arProg[rand(0, $countProgression - 1)] = '..';
 
-        return implode(' ', $arProgression);
+        return implode(' ', $arProg);
     };
 
     $fnGameCalculation = function ($lastUserExpression) {
-        $arProgression = explode(' ', $lastUserExpression);
-        $progressionCount = count($arProgression);
-        foreach ($arProgression as $key => $digit) {
+        $arProg = explode(' ', $lastUserExpression);
+        $progressionCount = count($arProg);
+        foreach ($arProg as $key => $digit) {
             if ($digit == '..') {
                 if ($key > 0 && $key < $progressionCount - 1) {
-                    return (intval($arProgression[$key + 1]) + intval($arProgression[$key - 1]))  / 2;
+                    return (intval($arProg[$key + 1]) + intval($arProg[$key - 1]))  / 2;
                 } elseif ($key == 0) {
-                    return intval($arProgression[$key + 1]) - (intval($arProgression[$key + 2]) - intval($arProgression[$key + 1]));
+                    return intval($arProg[$key + 1]) - (intval($arProg[$key + 2]) - intval($arProg[$key + 1]));
                 } else {
-                    return (intval($arProgression[$key - 1]) - intval($arProgression[$key - 2])) + intval($arProgression[$key - 1]);
+                    return (intval($arProg[$key - 1]) - intval($arProg[$key - 2])) + intval($arProg[$key - 1]);
                 }
             }
         }

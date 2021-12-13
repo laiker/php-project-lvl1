@@ -17,7 +17,7 @@ function run()
             }
         }
 
-        $arProgression[rand(0, $countProgression - 1)] = '...';
+        $arProgression[rand(0, $countProgression - 1)] = '..';
 
         return implode(' ', $arProgression);
     };

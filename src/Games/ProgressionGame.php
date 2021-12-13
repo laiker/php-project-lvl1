@@ -26,7 +26,7 @@ function run()
         $arProgression = explode(' ', $lastUserExpression);
         $progressionCount = count($arProgression);
         foreach ($arProgression as $key => $digit) {
-            if ($digit == '...') {
+            if ($digit == '..') {
                 if ($key > 0 && $key < $progressionCount - 1) {
                     return ($arProgression[$key + 1] + $arProgression[$key - 1])  / 2;
                 } elseif ($key == 0) {

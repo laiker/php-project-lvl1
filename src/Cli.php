@@ -10,7 +10,7 @@ function run(string $gameRule = '')
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    if ($gameRule) {
+    if ($gameRule !== '') {
         line($gameRule);
     }
     return $name;

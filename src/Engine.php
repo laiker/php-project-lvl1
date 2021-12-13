@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\run as makeGreetings;
 
-function makeQuestion(callable $fnGameExpression)
+function makeQuestion(\Closure $fnGameExpression)
 {
     $userResults = [];
     $gameExpression = \call_user_func($fnGameExpression);
@@ -16,7 +16,7 @@ function makeQuestion(callable $fnGameExpression)
     return $userResults;
 }
 
-function makeAnswer(callable $fnGameCalculation, array $userResults, string $name)
+function makeAnswer(\Closure $fnGameCalculation, array $userResults, string $name)
 {
     $lastUserExpression = array_key_last($userResults);
     $userLastResult = $userResults[$lastUserExpression];
@@ -34,7 +34,7 @@ function makeAnswer(callable $fnGameCalculation, array $userResults, string $nam
     return true;
 }
 
-function run(callabale $fnGameExpression, callabale $fnGameCalculation, string $gameRule)
+function run(\Closure $fnGameExpression, \Closure $fnGameCalculation, string $gameRule)
 {
     $name = makeGreetings($gameRule);
     for ($i = 0; $i < 3; $i++) {

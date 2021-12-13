@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\NodGame;
+namespace BrainGames\Games\GcdGame;
 
 function run()
 {

@@ -7,16 +7,16 @@
 ![PHPCS](https://github.com/laiker/php-project-lvl1/actions/workflows/phpcs-check.yml/badge.svg)
 
 Brain Even Game Demonstration
-https://asciinema.org/a/8K9eqZln0ZvpZAEOyFgRwlUsu
+https://asciinema.org/a/YkseUeKshHOyBUhfoISGm0XA3
 
 Brain Calc Game Demonstration
-https://asciinema.org/a/vERK4w5UnK0igtVyOWZapGey2
+https://asciinema.org/a/iZnRmx7pw2XvnFOEotFDjrgEv
 
 Brain Nod Game Demonstration
-https://asciinema.org/a/Kt2VEUajPnFKoMfDWkaIU09C4
+https://asciinema.org/a/WVUwiXApdlvcmkbRWzoHECrKV
 
 Brain Progression Game Demonstration
-https://asciinema.org/a/LwbL2tTre37I9YWoYM9dGEOvS
+https://asciinema.org/a/eeNJbNz54aXOQjlSOOpaOSGbL
 
 Brain Prime Game Demonstration
-https://asciinema.org/a/5Q7JUbKfddqd5TYHBmdLPJTcK
+https://asciinema.org/a/OwZjCiNKbh8BOUEXl9hC10iA4
